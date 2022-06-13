@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //* Connect Database
-connectDataBase("mongodb://localhost/shortUrl");
+connectDataBase(
+  "mongodb+srv://ahmedmohmd:95123574@cluster0.1bxam.mongodb.net/?retryWrites=true&w=majority"
+);
 
 //* CORS Initoalaization
 const whitelist = ["http://localhost:3000"];
