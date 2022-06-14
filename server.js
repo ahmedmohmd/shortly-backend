@@ -10,14 +10,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //* Connect Database
-connectDataBase(
-  "mongodb+srv://ahmedmohmd:95123574@cluster0.1bxam.mongodb.net/?retryWrites=true&w=majority"
-);
+connectDataBase(process.env.MONGODB_CONNECT_URL);
 
 //* CORS Initoalaization
-const whitelist = ["http://localhost:3000"];
 const corsOptions = {
-  origin: "*",
+  origin: "https://shortly-nine-beta.vercel.app",
   credentials: true,
 };
 app.use(cors(corsOptions));
